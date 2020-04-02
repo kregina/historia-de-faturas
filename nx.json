@@ -25,6 +25,9 @@
     "mobile-app-e2e": {
       "tags": [],
       "implicitDependencies": ["mobile-app"]
+    },
+    "ui-components": {
+      "tags": []
     }
   }
 }
