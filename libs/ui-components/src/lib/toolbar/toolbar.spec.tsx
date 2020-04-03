@@ -1,11 +1,11 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import UiComponents from './ui-components';
+import Toolbar from './toolbar';
 
-describe(' UiComponents', () => {
+describe(' Toolbar', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<UiComponents />);
+    const { baseElement } = render(<Toolbar />);
     expect(baseElement).toBeTruthy();
   });
 });

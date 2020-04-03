@@ -2,14 +2,14 @@ import React from 'react';
 
 import './layout.scss';
 
+import { Toolbar } from '@nx-orbita/ui-components';
+
 /* eslint-disable-next-line */
 export interface LayoutProps {}
 
 export const Layout = (props: LayoutProps) => {
   return (
-    <div>
-      <h1>Welcome to Layout component!</h1>
-    </div>
+    <Toolbar></Toolbar>
   );
 };
 
