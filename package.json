@@ -31,9 +31,11 @@
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/react-fontawesome": "^0.1.9",
     "document-register-element": "1.13.1",
+    "flickity": "^2.2.1",
     "next": "9.3.3",
     "react": "16.12.0",
-    "react-dom": "16.12.0"
+    "react-dom": "16.12.0",
+    "react-flickity-component": "^3.5.0"
   },
   "devDependencies": {
     "@nrwl/cypress": "9.2.1",
