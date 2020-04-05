@@ -4,14 +4,13 @@ import './carousel.scss';
 
 /* eslint-disable-next-line */
 export interface CarouselProps {
-  children?
 }
 
 const flickityOptions = {
   draggable: true
 }
 
-export const Carousel = (props: CarouselProps) => {
+export const Carousel : React.FunctionComponent<CarouselProps> = props => {
 
   let flickity;
 
@@ -23,10 +22,21 @@ export const Carousel = (props: CarouselProps) => {
   };
 
   return (
-    <Flickity flickityRef={onFlickityInit}
-      options={flickityOptions} className="my-10">
-        { props.children }
-    </Flickity>
+    <>
+      <div className="carousel-content">
+        <Flickity flickityRef={onFlickityInit}
+          options={flickityOptions} className="my-10">
+            { props.children }
+        </Flickity>
+      </div>
+
+      <style jsx>{`
+        .carousel-content {
+          margin: 50px 0;
+          overflow: hidden;
+        }
+      `}</style>
+    </>
   );
 };
 
