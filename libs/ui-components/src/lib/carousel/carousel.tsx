@@ -1,6 +1,5 @@
 import React, { Children } from 'react';
-import Flickity from 'react-flickity-component'
-import './carousel.scss';
+import Flickity from 'react-flickity-component';
 
 /* eslint-disable-next-line */
 export interface CarouselProps {

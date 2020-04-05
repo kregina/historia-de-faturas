@@ -4,6 +4,7 @@ import { format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 
 import { Fatura } from '../../models/fatura';
+import { Chip } from '@nx-orbita/ui-components';
 
 /* eslint-disable-next-line */
 export interface FaturaCardProps {
@@ -15,6 +16,12 @@ const formatter = new Intl.NumberFormat('pt-BR', {
   currency: 'BRL',
   minimumFractionDigits: 2
 });
+
+const statusMap = {
+  'ABERTA': 'warn',
+  'PAGO': 'success',
+  'ATRASADO': 'danger',
+}
 
 const formataDatas = (data, formato) =>  format(Date.parse(data), formato, { locale: ptBR })
 
@@ -32,8 +39,12 @@ export const FaturaCard : React.FunctionComponent<FaturaCardProps> = ({fatura}) 
             Fatura
           </div>
           <div className="card-subtitle">
-              {dataFatura}
-            </div>
+            {dataFatura}
+          </div>
+          <div className="spacer"></div>
+          <Chip color={statusMap[fatura.status.codigo]}>
+            {fatura.status.descricao}
+          </Chip>
         </div>
         <div className="card-body"></div>
         <div className="card-actions"></div>
@@ -43,7 +54,7 @@ export const FaturaCard : React.FunctionComponent<FaturaCardProps> = ({fatura}) 
         .card {
           background: #fff;
           display: grid;
-          grid-template-columns: auto 1fr auto;
+          grid-template-rows: auto 1fr auto;
           margin: 0 10px;
           padding: 19px 19px 17px;
           min-height: 405px;
@@ -70,6 +81,9 @@ export const FaturaCard : React.FunctionComponent<FaturaCardProps> = ({fatura}) 
         }
         .card-actions {
           justify-content: flex-end;
+        }
+        .spacer {
+          flex: 1;
         }
       `}</style>
     </>
