@@ -6,7 +6,9 @@ export interface CarouselProps {
 }
 
 const flickityOptions = {
-  draggable: true
+  draggable: true,
+  prevNextButtons: false,
+  pageDots: false
 }
 
 export const Carousel : React.FunctionComponent<CarouselProps> = props => {

@@ -17,7 +17,7 @@ const formatter = new Intl.NumberFormat('pt-BR', {
   minimumFractionDigits: 2
 });
 
-const statusMap = {
+const colorMap = {
   'ABERTA': 'warn',
   'PAGO': 'success',
   'ATRASADO': 'danger',
@@ -31,6 +31,8 @@ export const FaturaCard : React.FunctionComponent<FaturaCardProps> = ({fatura}) 
   const dataVencimento = formataDatas(fatura.dataVencimento, "dd/MM");
   const dataVencimentoDiaSemana = formataDatas(fatura.dataVencimento, "EEEE");
 
+  const statusColor = `${colorMap[fatura.status.codigo]}`;
+
   return (
     <>
       <div className="card">
@@ -42,15 +44,35 @@ export const FaturaCard : React.FunctionComponent<FaturaCardProps> = ({fatura}) 
             {dataFatura}
           </div>
           <div className="spacer"></div>
-          <Chip color={statusMap[fatura.status.codigo]}>
+          <Chip color={statusColor}>
             {fatura.status.descricao}
           </Chip>
         </div>
-        <div className="card-body"></div>
+        <div className="card-body">
+          <p>
+            <span className="info">{fatura.megabitesUtilizados}</span>
+            <span className="card-subtitle">MB</span>
+          </p>
+          <p>
+            <span className="card-subtitle">R$</span>
+            <span className={`valor ${statusColor}`}> {fatura.valor}</span>
+          </p>
+        </div>
         <div className="card-actions"></div>
       </div>
 
       <style jsx>{`
+        .danger {
+          color: #EF4056;
+        }
+
+        .success {
+          color: #02C45A;
+        }
+
+        .warn {
+          color: #9808FF;
+        }
         .card {
           background: #fff;
           display: grid;
@@ -82,8 +104,15 @@ export const FaturaCard : React.FunctionComponent<FaturaCardProps> = ({fatura}) 
         .card-actions {
           justify-content: flex-end;
         }
+        .info {
+          font-size: 56px;
+          font-weight: 500;
+        }
         .spacer {
           flex: 1;
+        }
+        .valor{
+          font-size: 24px;
         }
       `}</style>
     </>
