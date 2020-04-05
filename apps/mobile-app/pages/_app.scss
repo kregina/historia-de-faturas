@@ -1,3 +1,12 @@
+/* CSS variables */
+:root {
+  --color-primary: #00E96F;
+  --color-primary-dark: #02C45A;
+  --color-danger: #EF4056;
+  --color-warn: #9808FF;
+  --color-success: #00E96F;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
 
 body {

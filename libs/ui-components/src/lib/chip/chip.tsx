@@ -22,21 +22,19 @@ export const Chip : React.FunctionComponent<ChipProps> = props => {
             font-family: 'Roboto', sans-serif;
             font-size: 14px;
             padding: 4px 6px;
+            color: #fff;
           }
 
           .danger {
-            background: #EF4056;
-            color: #fff;
+            background: var(--color-danger);
           }
 
           .success {
-            background: #02C45A;
-            color: #fff;
+            background: var(--color-success);
           }
 
           .warn {
-            background: #9808FF;
-            color: #fff;
+            background: var(--color-warn);
           }
       `}</style>
     </>

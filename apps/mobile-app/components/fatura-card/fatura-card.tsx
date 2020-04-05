@@ -58,20 +58,26 @@ export const FaturaCard : React.FunctionComponent<FaturaCardProps> = ({fatura}) 
             <span className={`valor ${statusColor}`}> {fatura.valor}</span>
           </p>
         </div>
-        <div className="card-actions"></div>
+        <div className="card-actions">
+          {
+            fatura.status.codigo !== 'PAGO'
+              ? <button className="button" type="button">Efetuar paragamento</button>
+              : null
+          }
+        </div>
       </div>
 
       <style jsx>{`
         .danger {
-          color: #EF4056;
+          color: var(--color-danger);
         }
 
         .success {
-          color: #02C45A;
+          color: var(--color-success);
         }
 
         .warn {
-          color: #9808FF;
+          color: var(--color-warn);
         }
         .card {
           background: #fff;
@@ -102,6 +108,7 @@ export const FaturaCard : React.FunctionComponent<FaturaCardProps> = ({fatura}) 
           align-self: center;
         }
         .card-actions {
+          display: flex;
           justify-content: flex-end;
         }
         .info {
@@ -113,6 +120,13 @@ export const FaturaCard : React.FunctionComponent<FaturaCardProps> = ({fatura}) 
         }
         .valor{
           font-size: 24px;
+        }
+        .button {
+          background: transparent;
+          border: none;
+          color: var(--color-primary-dark);
+          text-transform: uppercase;
+          outline: none;
         }
       `}</style>
     </>

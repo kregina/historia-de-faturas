@@ -10,7 +10,6 @@ export const colors = () => {
 
   return (
     <>
-      <Chip>Default</Chip>
       <Chip color="danger">Danger</Chip>
       <Chip color="warn">Warn</Chip>
       <Chip color="success">Success</Chip>
