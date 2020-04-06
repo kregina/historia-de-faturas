@@ -1,0 +1,21 @@
+{
+  "name": "Orbita",
+  "short_name": "Orbita",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "background_color": "#f1f1f1",
+  "description": "Histórico de faturas da Orbita",
+  "display": "fullscreen",
+  "start_url": "/",
+  "theme_color": "#000"
+}
