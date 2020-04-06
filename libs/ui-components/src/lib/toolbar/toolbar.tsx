@@ -9,7 +9,7 @@ export const Toolbar = (props: ToolbarProps) => {
   return (
     <>
       <div className="toolbar">
-        <FontAwesomeIcon icon={faBars} />
+        <span className="icon"><FontAwesomeIcon icon={faBars} /></span>
       </div>
 
       <style jsx>{`
@@ -18,8 +18,9 @@ export const Toolbar = (props: ToolbarProps) => {
           padding: 2.0625rem 2.25rem;
         }
 
-        svg {
-          font-size: 1.3125rem;
+        .icon {
+          width: 16px;
+          display: inline-block;
         }
       `}</style>
     </>
