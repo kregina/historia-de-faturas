@@ -57,6 +57,13 @@ export const FaturaCard : React.FunctionComponent<FaturaCardProps> = ({fatura}) 
             <span className="card-subtitle">R$</span>
             <span className={`valor ${statusColor}`}> {fatura.valor}</span>
           </p>
+
+          <div className="vencimento">
+            <p className="card-subtitle">Vencimento</p>
+            <p>
+              <span>{dataVencimento}</span> {dataVencimentoDiaSemana}
+            </p>
+          </div>
         </div>
         <div className="card-actions">
           {
@@ -85,7 +92,7 @@ export const FaturaCard : React.FunctionComponent<FaturaCardProps> = ({fatura}) 
           grid-template-rows: auto 1fr auto;
           margin: 0 10px;
           padding: 19px 19px 17px;
-          min-height: 405px;
+          min-height: 420px;
           width: 70vw;
         }
         .card:first-child {
@@ -127,6 +134,16 @@ export const FaturaCard : React.FunctionComponent<FaturaCardProps> = ({fatura}) 
           color: var(--color-primary-dark);
           text-transform: uppercase;
           outline: none;
+        }
+        .vencimento{
+          margin-top: 50px;
+        }
+        .vencimento span {
+          font-size: 24px;
+        }
+        .vencimento p {
+          margin: 0;
+          text-transform: capitalize;
         }
       `}</style>
     </>
