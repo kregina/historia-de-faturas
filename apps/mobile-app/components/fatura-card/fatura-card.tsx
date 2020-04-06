@@ -1,21 +1,16 @@
-import React from 'react';
-
+import { Chip } from '@nx-orbita/ui-components';
 import { format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
+import React from 'react';
 
 import { Fatura } from '../../models/fatura';
-import { Chip } from '@nx-orbita/ui-components';
+import { formatter } from '../../utils/data-formatter';
 
 /* eslint-disable-next-line */
 export interface FaturaCardProps {
   fatura: Fatura
 }
 
-const formatter = new Intl.NumberFormat('pt-BR', {
-  style: 'currency',
-  currency: 'BRL',
-  minimumFractionDigits: 2
-});
 
 const colorMap = {
   'ABERTA': 'warn',
@@ -54,8 +49,7 @@ export const FaturaCard : React.FunctionComponent<FaturaCardProps> = ({fatura}) 
             <span className="card-subtitle">MB</span>
           </p>
           <p>
-            <span className="card-subtitle">R$</span>
-            <span className={`valor ${statusColor}`}> {fatura.valor}</span>
+            <span className={`valor ${statusColor}`}> {formatter.format(fatura.valor)}</span>
           </p>
 
           <div className="vencimento">
